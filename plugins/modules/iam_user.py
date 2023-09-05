@@ -15,6 +15,7 @@ description:
   - This module was originally added to C(community.aws) in release 1.0.0.
 author:
   - Josh Souza (@joshsouza)
+  - Aditya Putta(@theputta)
 options:
   name:
     description:
@@ -135,6 +136,12 @@ EXAMPLES = r"""
     state: present
     tags:
       Env: Prod
+
+- name: Add IAM User to Group
+  amazon.aws.iam_user:
+    name: user-1
+    groups:
+      - group-1
 
 - name: Delete the user
   amazon.aws.iam_user:
